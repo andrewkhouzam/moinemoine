@@ -4,8 +4,12 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
-	},
+		"laravel/framework": "4.2.*","dompdf/dompdf" : "0.6.*",
+		"barryvdh/laravel-dompdf": "0.4.*",
+		"dollar/generators": "dev-master"
+	},"minimum-stability" : "dev",
+
+
 	"autoload": {
 		"classmap": [
 			"app/commands",

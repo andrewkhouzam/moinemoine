@@ -7,20 +7,19 @@ type : <input type="text" name="type">
  -->
 {{Form::open(['route'=>'Users.resetpassword']);
 }}
-{{$User}}
 
-{{Form::hidden('user', $User)}}
+{{Form::hidden('userid', $userid)}}
 
 <div>
 {{Form::label('Enter new password','Enter new password')}}
 
-{{Form::text('password')}}
+{{Form::password('password')}}
 
 </div>
 <div>
 {{Form::label('retype password','retype password')}}
 
-{{Form::text('rpassword')}}
+{{Form::password('rpassword')}}
 
 </div>
 

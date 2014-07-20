@@ -29,7 +29,7 @@ type : <input type="text" name="type">
 <div>
 {{Form::label('password','password')}}
 
-{{Form::text('password')}}
+{{Form::password('password')}}
 
 </div>
 

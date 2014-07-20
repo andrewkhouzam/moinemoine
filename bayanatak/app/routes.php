@@ -10,27 +10,25 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-// route to show the login form
-// Route::get('/Users/activate/{code}',array(
-// 	'as'=>'Users-activate',
-//      'uses'=> 'UsersController@getActivate'
-// 	));
-Route::get('/Users/activate/{code}', function($code)
+Route::get('/Users/activate/{code}', array('as'=>'activate', function($code)
 {
 
 	$User = User::where('code', '=', $code)->first();
 	$User->active='1';
 	$User->code='';
 	$User->save();
-	return View::make('home');
-});
+	return View::make('home',['user'=>$User]);
+}));
 
-Route::get('/Users/reset/{code}', function($code)
+
+
+
+Route::get('/Users/reset/{code}', array('as'=>'resetpassword',function($code)
 {
 
 	$User = User::where('code', '=', $code)->first();
-	return View::make('Users/newpassword',['User'=>$User]);
-});
+	return View::make('Users/newpassword',['userid'=>$User->id]);
+}));
 
 
 Route::get('/Users/forgetpassword', function()
@@ -50,5 +48,29 @@ Route::get('/Users/forgetpassword', function()
 Route::resource('Users','UsersController');
 Route::get('/', function()
 {
+	return View::make('/login');
+});
+Route::get('new', function()
+{
 	return View::make('/Users/create');
 });
+
+Route::resource('cvs', 'CvsController');
+
+Route::resource('objectives', 'ObjectivesController');
+
+Route::resource('educations', 'EducationsController');
+
+Route::resource('work_experiences', 'Work_experiencesController');
+
+Route::resource('skills', 'SkillsController');
+
+Route::resource('references', 'ReferencesController');
+
+Route::resource('hobbies', 'HobbiesController');
+
+Route::resource('awards', 'AwardsController');
+
+Route::resource('workshops', 'WorkshopsController');
+
+Route::resource('languages', 'LanguagesController');

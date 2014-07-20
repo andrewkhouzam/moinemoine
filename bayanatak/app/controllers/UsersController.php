@@ -8,7 +8,7 @@ public function resetlink(){
 $User = User::where('username', '=',Input::get('username'))->where('email', '=',Input::get('email'))->first();
 $User->code= str_random(60);
 $User->save();
-Mail::send('emails.auth.resettosend',array('link'=> 'http://localhost/bayanatak/public/Users/reset/'.$User->code,'username'=>Input::get('username')),function($message){
+Mail::send('emails.auth.resettosend',array('link'=> URL::route('resetpassword', $User->code),'username'=>Input::get('username')),function($message){
 		$message->to(Input::get('email'),Input::get('username'))->subject("bayanatak password reset link");
 	});
 
@@ -25,7 +25,7 @@ public function store(){
 	$User->code= str_random(60);
 	$User->active='0';
 $User->save();
-	Mail::send('emails.auth.tosend',array('link'=> 'http://localhost/bayanatak/public/Users/activate/'.$User->code,'username'=>$User->username),function($message)use($User){
+	Mail::send('emails.auth.tosend',array('link'=> URL::route('activate', $User->code),'username'=>$User->username),function($message)use($User){
 		$message->to($User->email,$User->username)->subject("sha3'l el account");
 	});
 	
@@ -49,13 +49,15 @@ public function create(){
 
 
 public function resetpassword(){
-$User=Input::get('user');
-return $User;
+$User=User::find(Input::get('userid'));
 if(Input::get('password')==Input::get('rpassword')){
-$User->password = Input::get('password');
-$User->save();}
+$User->password = Hash::make(Input::get('password'));
+$User->code ='';
+$User->save();
+	return Redirect::to('login');
+}
 else{
-	return  View::make('Users/newpassword',['User'=>$User]);
+	return  View::make('Users/newpassword',['userid'=>$User]);
 }
 }
 
