@@ -21,7 +21,7 @@
         <div class="form-group">
             {{ Form::label('phone_number', 'Phone_number:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'phone_number', Input::old('phone_number'), array('class'=>'form-control')) }}
+              {{ Form::text( 'phone_number', Input::old('phone_number'), array('class'=>'form-control')) }}
             </div>
         </div>
 
