@@ -10,8 +10,8 @@ class Cv extends Eloquent {
 		'nationality' => 'required',
 		'address' => 'required',
 		'e_mail' => array ('required','email'),
-		'phone_number' => array('required','integer','size:8'),
-		'mobile_number' =>  array('required','integer','size:11'),
+		'phone_number' => array('required','integer'),
+		'mobile_number' =>  array('required','integer'),
 		'web' => array('required','url'),
 		'photo' => 'required'
 	);

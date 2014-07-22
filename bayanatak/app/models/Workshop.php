@@ -5,7 +5,7 @@ class Workshop extends Eloquent {
 
 	public static $rules = array(
 		'date' => 'required',
-		'institute' => 'required'
+		'institute' => array('required','alpha_num'),
 	);
 		 public function cv()
     {
