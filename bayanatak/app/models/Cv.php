@@ -12,8 +12,8 @@ class Cv extends Eloquent {
 		'e_mail' => array ('required','email'),
 		'phone_number' => array('required','integer'),
 		'mobile_number' =>  array('required','integer'),
-		'web' => array('required','url'),
-		'photo' => 'required'
+		'web' => array('url'),
+		
 	);
 
 		 public function user()
