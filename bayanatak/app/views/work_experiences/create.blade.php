@@ -19,28 +19,28 @@
 {{ Form::open(array('route' => 'work_experiences.store', 'class' => 'form-horizontal')) }}
 
         <div class="form-group">
-            {{ Form::label('company_name', 'Company_name:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('company_name', 'Company Name:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('company_name', Input::old('company_name'), array('class'=>'form-control', 'placeholder'=>'Company_name')) }}
+              {{ Form::text('company_name', Input::old('company_name'), array('class'=>'form-control', 'placeholder'=>'Job Title')) }}
             </div>
         </div>
 
         <div class="form-group">
-            {{ Form::label('job_title', 'Job_title:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('job_title', 'Job Title:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'job_title', Input::old('job_title'), array('class'=>'form-control')) }}
+              {{ Form::input('number', 'job_title', Input::old('job_title'), array('class'=>'form-control','placeholder'=>'Company Name')) }}
             </div>
         </div>
 
         <div class="form-group">
-            {{ Form::label('start_date', 'Start_date:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('start_date', 'Start Date:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
               {{ Form::text('start_date', Input::old('start_date'), array('class'=>'form-control', 'placeholder'=>'Start_date')) }}
             </div>
         </div>
 
         <div class="form-group">
-            {{ Form::label('end_date', 'End_date:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('end_date', 'End Date:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
               {{ Form::text('end_date', Input::old('end_date'), array('class'=>'form-control', 'placeholder'=>'End_date')) }}
             </div>
