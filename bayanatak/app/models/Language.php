@@ -4,7 +4,7 @@ class Language extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array(
-		'language' => 'required',
+		'language' => array('required','alpha'),
 		'language_scale' => 'required'
 	);
 		 public function cv()

@@ -73,8 +73,7 @@ class CvsController extends BaseController {
 
 		return Redirect::route('cvs.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -129,8 +128,7 @@ class CvsController extends BaseController {
 
 		return Redirect::route('cvs.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 

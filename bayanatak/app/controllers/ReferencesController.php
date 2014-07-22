@@ -62,8 +62,7 @@ class ReferencesController extends BaseController {
 
 		return Redirect::route('references.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -118,8 +117,7 @@ class ReferencesController extends BaseController {
 
 		return Redirect::route('references.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

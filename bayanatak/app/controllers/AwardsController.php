@@ -61,8 +61,7 @@ class AwardsController extends BaseController {
 
 		return Redirect::route('awards.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -117,8 +116,7 @@ class AwardsController extends BaseController {
 
 		return Redirect::route('awards.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

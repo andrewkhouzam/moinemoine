@@ -61,8 +61,7 @@ class ObjectivesController extends BaseController {
 
 		return Redirect::route('objectives.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -117,8 +116,7 @@ class ObjectivesController extends BaseController {
 
 		return Redirect::route('objectives.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

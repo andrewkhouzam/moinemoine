@@ -59,8 +59,7 @@ class SkillsController extends BaseController {
 
 		return Redirect::route('skills.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -115,8 +114,7 @@ class SkillsController extends BaseController {
 
 		return Redirect::route('skills.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

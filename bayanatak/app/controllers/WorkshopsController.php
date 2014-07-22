@@ -62,8 +62,7 @@ class WorkshopsController extends BaseController {
 
 		return Redirect::route('workshops.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -118,8 +117,7 @@ class WorkshopsController extends BaseController {
 
 		return Redirect::route('workshops.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

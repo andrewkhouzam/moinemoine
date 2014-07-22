@@ -6,8 +6,8 @@ class Reference extends Eloquent {
 	public static $rules = array(
 		'phone_number' => 'required',
 		'address' => 'required',
-		'e_mail' => 'required',
-		'link' => 'required'
+		'e_mail' => array('required','email'),
+		'link' => array('required','url'),
 	);
 		 public function cv()
     {

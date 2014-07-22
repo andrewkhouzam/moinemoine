@@ -63,8 +63,7 @@ class HobbiesController extends BaseController {
 
 		return Redirect::route('hobbies.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -119,8 +118,7 @@ class HobbiesController extends BaseController {
 
 		return Redirect::route('hobbies.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
