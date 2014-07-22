@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -16,7 +17,8 @@ class CreateAwardsTable extends Migration {
 			$table->increments('id');
 			$table->string('award');
 			$table->date('date');
-			$table->string('institute');
+
+$table->string('cv_id');			$table->string('institute');
 			$table->timestamps();
 		});
 	}

@@ -7,11 +7,11 @@ class EducationsController extends BaseController {
 	 *
 	 * @var Education
 	 */
-	protected $Education;
+	protected $education;
 
-	public function __construct(Education $Education)
+	public function __construct(Education $education)
 	{
-		$this->Education = $Education;
+		$this->education = $education;
 	}
 
 	/**
@@ -21,9 +21,9 @@ class EducationsController extends BaseController {
 	 */
 	public function index()
 	{
-		$Educations = $this->Education->all();
+		$educations = $this->education->all();
 
-		return View::make('Educations.index', compact('Educations'));
+		return View::make('educations.index', compact('educations'));
 	}
 
 	/**
@@ -33,7 +33,7 @@ class EducationsController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('Educations.create');
+		return View::make('educations.create');
 	}
 
 	/**
@@ -48,12 +48,17 @@ class EducationsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->Education->create($input);
 
-			return Redirect::route('Educations.index');
+			$education = $this->education->create($input);
+			
+			Auth::User()->cv()->first()->educations()->save($education);
+
+			//$this->education->create($input);
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
-		return Redirect::route('Educations.create')
+		return Redirect::route('educations.create')
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -67,9 +72,9 @@ class EducationsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$Education = $this->Education->findOrFail($id);
+		$education = $this->education->findOrFail($id);
 
-		return View::make('Educations.show', compact('Education'));
+		return View::make('educations.show', compact('education'));
 	}
 
 	/**
@@ -80,14 +85,14 @@ class EducationsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$Education = $this->Education->find($id);
+		$education = $this->education->find($id);
 
-		if (is_null($Education))
+		if (is_null($education))
 		{
-			return Redirect::route('Educations.index');
+			return Redirect::route('educations.index');
 		}
 
-		return View::make('Educations.edit', compact('Education'));
+		return View::make('educations.edit', compact('education'));
 	}
 
 	/**
@@ -103,13 +108,13 @@ class EducationsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$Education = $this->Education->find($id);
-			$Education->update($input);
+			$education = $this->education->find($id);
+			$education->update($input);
 
-			return Redirect::route('Educations.show', $id);
+			return Redirect::route('educations.show', $id);
 		}
 
-		return Redirect::route('Educations.edit', $id)
+		return Redirect::route('educations.edit', $id)
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -123,9 +128,9 @@ class EducationsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->Education->find($id)->delete();
+		$this->education->find($id)->delete();
 
-		return Redirect::route('Educations.index');
+		return Redirect::route('educations.index');
 	}
 
 }

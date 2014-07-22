@@ -14,14 +14,18 @@ class CvsController extends BaseController {
 		$this->cv = $cv;
 	}
 
+
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		$cvs = $this->cv->all();
+	public function index(){
+
+
+		$cvs = Auth::User()->cv;
 
 		return View::make('cvs.index', compact('cvs'));
 	}
@@ -48,9 +52,23 @@ class CvsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->cv->create($input);
 
-			return Redirect::route('cvs.index');
+			if (Input::hasFile('photo')) {
+				$name = substr(md5(rand() . Input::file('photo')->getClientOriginalName()), 0, 10)  . "." . Input::file('photo')->getClientOriginalExtension();
+				// return $_FILES['photo'];
+				Image::make($_FILES['photo']['tmp_name'])->save('photos/original/' . $name);
+				Image::make($_FILES['photo']['tmp_name'])->resize(62,62)->save('photos/thumb/' . $name);
+				$input['photo'] = $name;
+			}
+
+
+			$cv = $this->cv->create($input);
+
+			Auth::User()->cv()->save($cv);
+			//return Auth::User()->cv()->first();
+
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('cvs.create')
@@ -114,6 +132,12 @@ class CvsController extends BaseController {
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
 	}
+
+
+
+
+
+
 
 	/**
 	 * Remove the specified resource from storage.

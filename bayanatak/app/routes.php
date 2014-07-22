@@ -17,7 +17,8 @@ Route::get('/Users/activate/{code}', array('as'=>'activate', function($code)
 	$User->active='1';
 	$User->code='';
 	$User->save();
-	return View::make('home',['user'=>$User]);
+	return Redirect::to('login');
+;
 }));
 
 
@@ -50,6 +51,24 @@ Route::get('/', function()
 {
 	return View::make('/login');
 });
+
+Route::get('/d', array('as'=>'htmlcvd',function()
+{
+
+
+	$pdf = PDF::loadView('htmlcv', ['user'=>(Auth::User())]);
+return $pdf->download('invoice.pdf');
+}));
+
+Route::get('/di', array('as'=>'htmlcvg',function()
+{
+
+
+	return View::make('htmlcv', ['user'=>(Auth::User())]);
+ 
+}));
+
+
 Route::get('new', function()
 {
 	return View::make('/Users/create');
@@ -59,18 +78,19 @@ Route::resource('cvs', 'CvsController');
 
 Route::resource('objectives', 'ObjectivesController');
 
-Route::resource('educations', 'EducationsController');
-
 Route::resource('work_experiences', 'Work_experiencesController');
 
 Route::resource('skills', 'SkillsController');
 
 Route::resource('references', 'ReferencesController');
 
-Route::resource('hobbies', 'HobbiesController');
-
 Route::resource('awards', 'AwardsController');
 
 Route::resource('workshops', 'WorkshopsController');
 
 Route::resource('languages', 'LanguagesController');
+
+Route::resource('educations', 'EducationsController');
+
+
+Route::resource('hobbies', 'HobbiesController');

@@ -48,9 +48,15 @@ class ObjectivesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->objective->create($input);
 
-			return Redirect::route('objectives.index');
+
+			$objective = $this->objective->create($input);
+			
+			Auth::User()->cv()->first()->objectives()->save($objective);
+
+		
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('objectives.create')

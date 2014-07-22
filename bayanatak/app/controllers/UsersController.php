@@ -16,6 +16,8 @@ Mail::send('emails.auth.resettosend',array('link'=> URL::route('resetpassword', 
 }
 
 
+
+
 public function store(){
 	$User = new User;
 	$User->name = Input::get('name');

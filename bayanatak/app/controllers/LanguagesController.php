@@ -48,9 +48,14 @@ class LanguagesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->language->create($input);
 
-			return Redirect::route('languages.index');
+
+			$language = $this->language->create($input);
+			
+			Auth::User()->cv()->first()->languages()->save($language);
+
+			
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('languages.create')

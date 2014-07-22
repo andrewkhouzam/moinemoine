@@ -7,11 +7,11 @@ class HobbiesController extends BaseController {
 	 *
 	 * @var Hobby
 	 */
-	protected $Hobby;
+	protected $hobby;
 
-	public function __construct(Hobby $Hobby)
+	public function __construct(Hobby $hobby)
 	{
-		$this->Hobby = $Hobby;
+		$this->hobby = $hobby;
 	}
 
 	/**
@@ -21,9 +21,9 @@ class HobbiesController extends BaseController {
 	 */
 	public function index()
 	{
-		$Hobbies = $this->Hobby->all();
+		$hobbies = $this->hobby->all();
 
-		return View::make('Hobbies.index', compact('Hobbies'));
+		return View::make('hobbies.index', compact('hobbies'));
 	}
 
 	/**
@@ -33,7 +33,7 @@ class HobbiesController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('Hobbies.create');
+		return View::make('hobbies.create');
 	}
 
 	/**
@@ -48,12 +48,20 @@ class HobbiesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->Hobby->create($input);
 
-			return Redirect::route('Hobbies.index');
+
+
+			$hobby = $this->hobby->create($input);
+			
+			Auth::User()->cv()->first()->hobbys()->save($hobby);
+
+			
+
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
-		return Redirect::route('Hobbies.create')
+		return Redirect::route('hobbies.create')
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -67,9 +75,9 @@ class HobbiesController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$Hobby = $this->Hobby->findOrFail($id);
+		$hobby = $this->hobby->findOrFail($id);
 
-		return View::make('Hobbies.show', compact('Hobby'));
+		return View::make('hobbies.show', compact('hobby'));
 	}
 
 	/**
@@ -80,14 +88,14 @@ class HobbiesController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$Hobby = $this->Hobby->find($id);
+		$hobby = $this->hobby->find($id);
 
-		if (is_null($Hobby))
+		if (is_null($hobby))
 		{
-			return Redirect::route('Hobbies.index');
+			return Redirect::route('hobbies.index');
 		}
 
-		return View::make('Hobbies.edit', compact('Hobby'));
+		return View::make('hobbies.edit', compact('hobby'));
 	}
 
 	/**
@@ -103,13 +111,13 @@ class HobbiesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$Hobby = $this->Hobby->find($id);
-			$Hobby->update($input);
+			$hobby = $this->hobby->find($id);
+			$hobby->update($input);
 
-			return Redirect::route('Hobbies.show', $id);
+			return Redirect::route('hobbies.show', $id);
 		}
 
-		return Redirect::route('Hobbies.edit', $id)
+		return Redirect::route('hobbies.edit', $id)
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -123,9 +131,9 @@ class HobbiesController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->Hobby->find($id)->delete();
+		$this->hobby->find($id)->delete();
 
-		return Redirect::route('Hobbies.index');
+		return Redirect::route('hobbies.index');
 	}
 
 }

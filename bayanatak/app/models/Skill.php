@@ -7,4 +7,8 @@ class Skill extends Eloquent {
 		'skill_name' => 'required',
 		'skill_scale' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

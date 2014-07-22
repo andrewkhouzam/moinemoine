@@ -9,4 +9,8 @@ class Reference extends Eloquent {
 		'e_mail' => 'required',
 		'link' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

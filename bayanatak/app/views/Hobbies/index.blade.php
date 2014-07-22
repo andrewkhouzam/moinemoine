@@ -4,9 +4,9 @@
 
 <h1>All Hobbies</h1>
 
-<p>{{ link_to_route('Hobbies.create', 'Add New Hobby', null, array('class' => 'btn btn-lg btn-success')) }}</p>
+<p>{{ link_to_route('hobbies.create', 'Add New Hobby', null, array('class' => 'btn btn-lg btn-success')) }}</p>
 
-@if ($Hobbies->count())
+@if ($hobbies->count())
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -16,21 +16,21 @@
 		</thead>
 
 		<tbody>
-			@foreach ($Hobbies as $Hobby)
+			@foreach ($hobbies as $hobby)
 				<tr>
-					<td>{{{ $Hobby->name }}}</td>
+					<td>{{{ $hobby->name }}}</td>
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('Hobbies.destroy', $Hobby->id))) }}
+                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('hobbies.destroy', $hobby->id))) }}
                             {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                         {{ Form::close() }}
-                        {{ link_to_route('Hobbies.edit', 'Edit', array($Hobby->id), array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('hobbies.edit', 'Edit', array($hobby->id), array('class' => 'btn btn-info')) }}
                     </td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
 @else
-	There are no Hobbies
+	There are no hobbies
 @endif
 
 @stop

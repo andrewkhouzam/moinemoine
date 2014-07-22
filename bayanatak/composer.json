@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*","dompdf/dompdf" : "0.6.*",
 		"barryvdh/laravel-dompdf": "0.4.*",
-		"dollar/generators": "dev-master"
+		"dollar/generators": "dev-master",
+		"intervention/image": "1.*"
 	},"minimum-stability" : "dev",
 
 

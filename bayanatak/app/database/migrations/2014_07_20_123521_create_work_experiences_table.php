@@ -21,6 +21,8 @@ class CreateWorkExperiencesTable extends Migration {
 			$table->string('city');
 			$table->string('country');
 			$table->text('description');
+						$table->string('cv_id');
+
 			$table->timestamps();
 		});
 	}

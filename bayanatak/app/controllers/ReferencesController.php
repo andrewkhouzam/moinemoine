@@ -48,9 +48,16 @@ class ReferencesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->reference->create($input);
 
-			return Redirect::route('references.index');
+
+
+			$reference = $this->reference->create($input);
+			
+			Auth::User()->cv()->first()->references()->save($reference);
+
+		
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('references.create')

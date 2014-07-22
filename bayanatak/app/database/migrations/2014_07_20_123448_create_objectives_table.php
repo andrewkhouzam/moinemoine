@@ -15,6 +15,7 @@ class CreateObjectivesTable extends Migration {
 		Schema::create('objectives', function(Blueprint $table) {
 			$table->increments('id');
 			$table->text('objective');
+			$table->string('cv_id');
 			$table->timestamps();
 		});
 	}

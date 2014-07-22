@@ -16,6 +16,7 @@ class CreateWorkshopsTable extends Migration {
 			$table->increments('id');
 			$table->date('date');
 			$table->string('institute');
+			$table->string('cv_id');
 			$table->timestamps();
 		});
 	}

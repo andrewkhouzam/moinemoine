@@ -12,4 +12,8 @@ class Work_experience extends Eloquent {
 		'country' => 'required',
 		'description' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

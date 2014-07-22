@@ -6,4 +6,8 @@ class Objective extends Eloquent {
 	public static $rules = array(
 		'objective' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

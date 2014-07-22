@@ -17,6 +17,7 @@ class CreateReferencesTable extends Migration {
 			$table->integer('phone_number');
 			$table->string('address');
 			$table->string('e_mail');
+			$table->string('cv_id');
 			$table->string('link');
 			$table->timestamps();
 		});

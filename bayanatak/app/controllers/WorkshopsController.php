@@ -48,9 +48,16 @@ class WorkshopsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->workshop->create($input);
 
-			return Redirect::route('workshops.index');
+
+
+			$workshop = $this->workshop->create($input);
+			
+			Auth::User()->cv()->first()->workshops()->save($workshop);
+
+
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('workshops.create')

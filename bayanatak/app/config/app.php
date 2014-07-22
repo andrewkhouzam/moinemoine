@@ -123,6 +123,10 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Dollar\Generators\GeneratorsServiceProvider',
+		'Intervention\Image\ImageServiceProvider' ,
+
+
+
 
 
 	),
@@ -192,6 +196,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 				'PDF' => 'Barryvdh\DomPDF\Facade',
+				'Image' => 'Intervention\Image\Facades\Image',
 
 
 	),

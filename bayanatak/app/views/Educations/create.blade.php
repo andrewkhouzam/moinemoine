@@ -16,12 +16,12 @@
     </div>
 </div>
 
-{{ Form::open(array('route' => 'Educations.store', 'class' => 'form-horizontal')) }}
+{{ Form::open(array('route' => 'educations.store', 'class' => 'form-horizontal')) }}
 
         <div class="form-group">
-            {{ Form::label('institute', 'institute:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('institute', 'Institute:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('institute', Input::old('institute'), array('class'=>'form-control', 'placeholder'=>'institute')) }}
+              {{ Form::text('institute', Input::old('institute'), array('class'=>'form-control', 'placeholder'=>'Institute')) }}
             </div>
         </div>
 

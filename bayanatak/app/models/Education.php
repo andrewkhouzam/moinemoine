@@ -15,4 +15,8 @@ class Education extends Eloquent {
 		'honors' => 'required',
 		'scholorship' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

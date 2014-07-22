@@ -16,12 +16,12 @@
     </div>
 </div>
 
-{{ Form::model($Education, array('class' => 'form-horizontal', 'method' => 'PATCH', 'route' => array('Educations.update', $Education->id))) }}
+{{ Form::model($education, array('class' => 'form-horizontal', 'method' => 'PATCH', 'route' => array('educations.update', $education->id))) }}
 
         <div class="form-group">
-            {{ Form::label('institute', 'institute:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('institute', 'Institute:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('institute', Input::old('institute'), array('class'=>'form-control', 'placeholder'=>'institute')) }}
+              {{ Form::text('institute', Input::old('institute'), array('class'=>'form-control', 'placeholder'=>'Institute')) }}
             </div>
         </div>
 
@@ -93,7 +93,7 @@
     <label class="col-sm-2 control-label">&nbsp;</label>
     <div class="col-sm-10">
       {{ Form::submit('Update', array('class' => 'btn btn-lg btn-primary')) }}
-      {{ link_to_route('Educations.show', 'Cancel', $Education->id, array('class' => 'btn btn-lg btn-default')) }}
+      {{ link_to_route('educations.show', 'Cancel', $education->id, array('class' => 'btn btn-lg btn-default')) }}
     </div>
 </div>
 

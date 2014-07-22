@@ -26,7 +26,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 
 	public function cv() {
-		return $this->hasOne('Cv','cv_id'); // this matches the Eloquent model
+		return $this->hasOne('Cv','user_id'); // this matches the Eloquent model
 	}
 
 }

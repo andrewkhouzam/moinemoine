@@ -48,9 +48,14 @@ class Work_experiencesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->work_experience->create($input);
 
-			return Redirect::route('work_experiences.index');
+
+			$work_experience = $this->work_experience->create($input);
+			
+			Auth::User()->cv()->first()->work_experiences()->save($work_experience);
+
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('work_experiences.create')

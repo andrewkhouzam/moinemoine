@@ -7,4 +7,9 @@ class Language extends Eloquent {
 		'language' => 'required',
 		'language_scale' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }
+

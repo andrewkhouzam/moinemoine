@@ -21,8 +21,7 @@ class SkillsController extends BaseController {
 	 */
 	public function index()
 	{
-		$skills = $this->skill->all();
-
+		$skills = Auth::User()->cv->skills();
 		return View::make('skills.index', compact('skills'));
 	}
 
@@ -48,9 +47,14 @@ class SkillsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->skill->create($input);
 
-			return Redirect::route('skills.index');
+
+			$skill = $this->skill->create($input);
+			
+			Auth::User()->cv()->first()->skills()->save($skill);
+
+
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('skills.create')

@@ -16,7 +16,7 @@ class CreateCvsTable extends Migration {
 			$table->increments('id');
 			$table->string('first_name');
 			$table->string('surname');
-			$table->date('date_of_birth');
+			$table->text('date_of_birth');
 			$table->string('nationality');
 			$table->string('address');
 			$table->string('e_mail');
@@ -24,6 +24,8 @@ class CreateCvsTable extends Migration {
 			$table->integer('mobile_number');
 			$table->string('web');
 			$table->string('photo');
+			$table->string('user_id');
+
 			$table->timestamps();
 		});
 	}

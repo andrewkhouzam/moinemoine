@@ -8,4 +8,9 @@ class Award extends Eloquent {
 		'date' => 'required',
 		'institute' => 'required'
 	);
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
+
 }

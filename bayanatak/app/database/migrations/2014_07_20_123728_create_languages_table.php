@@ -16,6 +16,7 @@ class CreateLanguagesTable extends Migration {
 			$table->increments('id');
 			$table->string('language');
 			$table->integer('language_scale');
+			$table->string('cv_id');
 			$table->timestamps();
 		});
 	}
