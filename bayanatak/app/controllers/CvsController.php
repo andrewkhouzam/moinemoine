@@ -25,7 +25,7 @@ class CvsController extends BaseController {
 	public function index(){
 
 
-		$cvs = Auth::User()->cv;
+		$cvs = Auth::User()->cvs;
 
 		return View::make('cvs.index', compact('cvs'));
 	}
@@ -64,7 +64,7 @@ class CvsController extends BaseController {
 
 			$cv = $this->cv->create($input);
 
-			Auth::User()->cv()->save($cv);
+			Auth::User()->cvs()->save($cv);
 			//return Auth::User()->cv()->first();
 
 

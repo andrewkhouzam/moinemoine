@@ -4,16 +4,16 @@ class Cv extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array(
-		'first_name' => array ('required','alpha'),
-		'surname' =>  array ('required','alpha'),
-		'date_of_birth' => 'required',
-		'nationality' => 'required',
-		'address' => 'required',
-		'e_mail' => array ('required','email'),
-		'phone_number' => array('required','integer'),
-		'mobile_number' =>  array('required','integer'),
-		'web' => array('required','url'),
-		'photo' => 'required'
+		// 'first_name' => array ('required','alpha'),
+		// 'surname' =>  array ('required','alpha'),
+		// 'date_of_birth' => 'required',
+		// 'nationality' => 'required',
+		// 'address' => 'required',
+		// 'e_mail' => array ('required','email'),
+		// 'phone_number' => array('required','integer'),
+		// 'mobile_number' =>  array('required','integer'),
+		// 'web' => array('required','url'),
+		// 'photo' => 'required'
 	);
 
 		 public function user()

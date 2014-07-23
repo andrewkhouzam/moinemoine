@@ -21,7 +21,7 @@ class WorkshopsController extends BaseController {
 	 */
 	public function index()
 	{
-		$workshops = $this->workshop->all();
+		$workshops =  Auth::User()->cv->workshops;
 
 		return View::make('workshops.index', compact('workshops'));
 	}
