@@ -58,7 +58,7 @@ class SkillsController extends BaseController {
 			Auth::User()->cv()->first()->skills()->save($skill);
 
 
-				return Redirect::to('home')->withUser(Auth::User());
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('skills.create')

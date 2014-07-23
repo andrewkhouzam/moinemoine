@@ -1776,8 +1776,6 @@ return array(
     'UpdateAwards' => $baseDir . '/app/database/migrations/2014_07_23_091059_update_awards.php',
     'UpdateAwardsAgain' => $baseDir . '/app/database/migrations/2014_07_23_091642_update_awards_again.php',
     'UpdateColumnWorkshops' => $baseDir . '/app/database/migrations/2014_07_22_140846_update_column_workshops.php',
-    'UpdateCvs' => $baseDir . '/app/database/migrations/2014_07_23_101203_update_cvs.php',
-    'UpdateCvsAgain' => $baseDir . '/app/database/migrations/2014_07_23_101422_update_cvs_again.php',
     'UpdateReferences' => $baseDir . '/app/database/migrations/2014_07_22_144246_update_references.php',
     'UpdateReferencesAgain' => $baseDir . '/app/database/migrations/2014_07_22_144408_update_references_again.php',
     'UpdateWork' => $baseDir . '/app/database/migrations/2014_07_22_142311_update_work.php',

@@ -55,7 +55,7 @@ class Work_experiencesController extends BaseController {
 			Auth::User()->cv()->first()->work_experiences()->save($work_experience);
 
 
-				return Redirect::to('home')->withUser(Auth::User());
+				return View::make('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('work_experiences.create')

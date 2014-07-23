@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-<title>Bayanatak</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <style>
