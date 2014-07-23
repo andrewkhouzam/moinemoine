@@ -22,6 +22,10 @@ Route::get('/Users/activate/{code}', array('as'=>'activate', function($code)
 }));
 
 
+Route::get('home', function()
+{
+	return View::make('home')->withUser(Auth::user());
+});
 
 
 Route::get('/Users/reset/{code}', array('as'=>'resetpassword',function($code)

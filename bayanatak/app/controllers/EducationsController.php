@@ -55,7 +55,7 @@ class EducationsController extends BaseController {
 
 			//$this->education->create($input);
 
-				return View::make('home')->withUser(Auth::User());
+				return Redirect::to('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('educations.create')

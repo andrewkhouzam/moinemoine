@@ -54,7 +54,7 @@ class LanguagesController extends BaseController {
 			Auth::User()->cv()->first()->languages()->save($language);
 
 			
-				return View::make('home')->withUser(Auth::User());
+				return Redirect::to('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('languages.create')

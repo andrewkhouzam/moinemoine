@@ -68,7 +68,7 @@ class CvsController extends BaseController {
 			//return Auth::User()->cv()->first();
 
 
-				return View::make('home')->withUser(Auth::User());
+				return Redirect::to('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('cvs.create')

@@ -53,9 +53,9 @@
 
 
         <div class="form-group">
-            <?php echo Form::label('date_of_birth', 'Date_of_birth:', array('class'=>'col-md-2 control-label')); ?>
+            <?php echo Form::label('date_of_birth', 'Date Of Birth:', array('class'=>'col-md-2 control-label')); ?>
             <div class="col-sm-10">
-              <?php echo Form::text('date_of_birth', Input::old('date_of_birth'), array('class'=>'form-control', 'placeholder'=>'Date_of_birth','id'=>"datepicker", 'autocomplete' => 'off')); ?>
+              <?php echo Form::text('date_of_birth', Input::old('date_of_birth'), array('class'=>'form-control', 'placeholder'=>'Date of Birth','id'=>"datepicker", 'autocomplete' => 'off')); ?>
             </div>
         </div>
 
@@ -81,21 +81,21 @@
         </div>
 
         <div class="form-group">
-            <?php echo Form::label('phone_number', 'Phone_number:', array('class'=>'col-md-2 control-label')); ?>
+            <?php echo Form::label('phone_number', 'Phone Number:', array('class'=>'col-md-2 control-label')); ?>
             <div class="col-sm-10">
-              <?php echo Form::input('number', 'phone_number', Input::old('phone_number'), array('class'=>'form-control')); ?>
+              <?php echo Form::text( 'phone_number', Input::old('phone_number'), array('class'=>'form-control')); ?>
             </div>
         </div>
 
         <div class="form-group">
-            <?php echo Form::label('mobile_number', 'Mobile_number:', array('class'=>'col-md-2 control-label')); ?>
+            <?php echo Form::label('mobile_number', 'Mobile Number:', array('class'=>'col-md-2 control-label')); ?>
             <div class="col-sm-10">
-              <?php echo Form::input('number', 'mobile_number', Input::old('mobile_number'), array('class'=>'form-control')); ?>
+              <?php echo Form::text( 'mobile_number', Input::old('mobile_number'), array('class'=>'form-control')); ?>
             </div>
         </div>
 
         <div class="form-group">
-            <?php echo Form::label('web', 'Web:', array('class'=>'col-md-2 control-label')); ?>
+            <?php echo Form::label('web', 'url:', array('class'=>'col-md-2 control-label')); ?>
             <div class="col-sm-10">
               <?php echo Form::text('web', Input::old('web'), array('class'=>'form-control', 'placeholder'=>'Web')); ?>
             </div>
