@@ -8,7 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Absolute_Positioner' => $vendorDir . '/dompdf/dompdf/include/absolute_positioner.cls.php',
     'Abstract_Renderer' => $vendorDir . '/dompdf/dompdf/include/abstract_renderer.cls.php',
-    'AddUsernameToWdvjhwdTable' => $baseDir . '/app/database/migrations/2014_07_22_145550_add_username_to_wdvjhwd_table.php',
     'Adobe_Font_Metrics' => $vendorDir . '/phenx/php-font-lib/classes/Adobe_Font_Metrics.php',
     'Attribute_Translator' => $vendorDir . '/dompdf/dompdf/include/attribute_translator.cls.php',
     'Award' => $baseDir . '/app/models/Award.php',
@@ -1774,6 +1773,8 @@ return array(
     'Text_Frame_Decorator' => $vendorDir . '/dompdf/dompdf/include/text_frame_decorator.cls.php',
     'Text_Frame_Reflower' => $vendorDir . '/dompdf/dompdf/include/text_frame_reflower.cls.php',
     'Text_Renderer' => $vendorDir . '/dompdf/dompdf/include/text_renderer.cls.php',
+    'UpdateAwards' => $baseDir . '/app/database/migrations/2014_07_23_091059_update_awards.php',
+    'UpdateAwardsAgain' => $baseDir . '/app/database/migrations/2014_07_23_091642_update_awards_again.php',
     'UpdateColumnWorkshops' => $baseDir . '/app/database/migrations/2014_07_22_140846_update_column_workshops.php',
     'UpdateReferences' => $baseDir . '/app/database/migrations/2014_07_22_144246_update_references.php',
     'UpdateReferencesAgain' => $baseDir . '/app/database/migrations/2014_07_22_144408_update_references_again.php',
