@@ -53,7 +53,7 @@ class WorkshopsController extends BaseController {
 
 			$workshop = $this->workshop->create($input);
 			
-			Auth::User()->cv()->first()->workshops()->save($workshop);
+			Auth::User()->cvs()->first()->workshops()->save($workshop);
 
 
 

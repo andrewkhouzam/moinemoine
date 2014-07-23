@@ -21,11 +21,8 @@ class SkillsController extends BaseController {
 	 */
 	public function index()
 	{
-		$skills = Auth::User()->cv->skills;
-<<<<<<< HEAD
-		
-=======
->>>>>>> 8dce1b2a611e4c491e699445fd6939d717aa263a
+		$skills = Auth::User()->cvs->skills;
+
 		return View::make('skills.index', compact('skills'));
 	}
 
@@ -55,7 +52,7 @@ class SkillsController extends BaseController {
 
 			$skill = $this->skill->create($input);
 			
-			Auth::User()->cv()->first()->skills()->save($skill);
+			Auth::User()->cvs()->first()->skills()->save($skill);
 
 
 				return Redirect::to('home')->withUser(Auth::User());

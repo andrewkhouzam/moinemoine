@@ -51,7 +51,7 @@ class LanguagesController extends BaseController {
 
 			$language = $this->language->create($input);
 			
-			Auth::User()->cv()->first()->languages()->save($language);
+			Auth::User()->cvs()->first()->languages()->save($language);
 
 			
 				return Redirect::to('home')->withUser(Auth::User());

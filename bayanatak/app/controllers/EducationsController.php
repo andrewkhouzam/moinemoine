@@ -51,7 +51,7 @@ class EducationsController extends BaseController {
 
 			$education = $this->education->create($input);
 			
-			Auth::User()->cv()->first()->educations()->save($education);
+			Auth::User()->cvs()->first()->educations()->save($education);
 
 			//$this->education->create($input);
 

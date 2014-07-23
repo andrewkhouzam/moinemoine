@@ -53,7 +53,7 @@ class HobbiesController extends BaseController {
 
 			$hobby = $this->hobby->create($input);
 			
-			Auth::User()->cv()->first()->hobbys()->save($hobby);
+			Auth::User()->cvs()->first()->hobbys()->save($hobby);
 
 			
 

@@ -53,7 +53,7 @@ class ReferencesController extends BaseController {
 
 			$reference = $this->reference->create($input);
 			
-			Auth::User()->cv()->first()->references()->save($reference);
+			Auth::User()->cvs()->first()->references()->save($reference);
 
 		
 

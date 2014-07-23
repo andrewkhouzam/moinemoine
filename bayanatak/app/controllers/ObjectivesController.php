@@ -52,7 +52,7 @@ class ObjectivesController extends BaseController {
 
 			$objective = $this->objective->create($input);
 			
-			Auth::User()->cv()->first()->objectives()->save($objective);
+			Auth::User()->cvs()->first()->objectives()->save($objective);
 
 		
 

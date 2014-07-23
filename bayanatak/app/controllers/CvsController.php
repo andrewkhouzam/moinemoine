@@ -65,7 +65,7 @@ class CvsController extends BaseController {
 			$cv = $this->cv->create($input);
 
 			Auth::User()->cvs()->save($cv);
-			//return Auth::User()->cv()->first();
+			//return Auth::User()->cvs()->first();
 
 
 				return Redirect::to('home')->withUser(Auth::User());

@@ -52,7 +52,7 @@ class Work_experiencesController extends BaseController {
 
 			$work_experience = $this->work_experience->create($input);
 			
-			Auth::User()->cv()->first()->work_experiences()->save($work_experience);
+			Auth::User()->cvs()->first()->work_experiences()->save($work_experience);
 
 
 				return Redirect::to('home')->withUser(Auth::User());

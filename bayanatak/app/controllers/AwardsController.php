@@ -52,7 +52,7 @@ class AwardsController extends BaseController {
 
 			$award = $this->award->create($input);
 			
-			Auth::User()->cv()->first()->awards()->save($award);
+			Auth::User()->cvs()->first()->awards()->save($award);
 
 			
 
