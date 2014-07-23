@@ -21,7 +21,7 @@ class LanguagesController extends BaseController {
 	 */
 	public function index()
 	{
-		$languages =  Auth::User()->cv->languages;
+		$languages =  Auth::User()->cvs[0]->languages;
 		return View::make('languages.index', compact('languages'));
 	}
 

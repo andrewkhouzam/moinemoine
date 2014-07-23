@@ -46,13 +46,13 @@ class Cv extends Eloquent {
     }
         public function Reference()
     {
-        return $this->hasMany('Objective','cv_id');
+        return $this->hasMany('Reference','cv_id');
     }
         public function skills()
     {
         return $this->hasMany('Skill','cv_id');
     }
-        public function work_experiences()
+        public function workexperiences()
     {
         return $this->hasMany('Work_experience','cv_id');
     }

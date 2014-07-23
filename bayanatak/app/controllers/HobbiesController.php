@@ -20,8 +20,8 @@ class HobbiesController extends BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		$hobbies =  Auth::User()->cv->hobbies;
+	{	
+		$hobbies =  Auth::User()->cvs[0]->Hobbys;
 
 		return View::make('hobbies.index', compact('hobbies'));
 	}

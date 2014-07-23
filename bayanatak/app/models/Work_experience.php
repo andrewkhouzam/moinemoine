@@ -12,6 +12,8 @@ class Work_experience extends Eloquent {
 		'country' => array('required','alpha'),
 		'description' => array('required','alpha_num'),
 	);
+
+	
 		 public function cv()
     {
         return $this->belongsTo('Cv');

@@ -21,7 +21,7 @@ class ReferencesController extends BaseController {
 	 */
 	public function index()
 	{
-		$references =  Auth::User()->cv->references;
+		$references =  Auth::User()->cvs[0]->reference;
 
 		return View::make('references.index', compact('references'));
 	}

@@ -21,7 +21,7 @@ class AwardsController extends BaseController {
 	 */
 	public function index()
 	{
-		$awards = Auth::User()->cv->awards;
+		$awards = Auth::User()->cvs[0]->awards;
         
 		return View::make('awards.index', compact('awards'));
 	}

@@ -21,7 +21,7 @@ class EducationsController extends BaseController {
 	 */
 	public function index()
 	{
-		$educations =  Auth::User()->cv->educations;
+		$educations =  Auth::User()->cvs[0]->educations;
 
 		return View::make('educations.index', compact('educations'));
 	}

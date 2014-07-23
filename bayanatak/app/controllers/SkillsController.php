@@ -21,7 +21,7 @@ class SkillsController extends BaseController {
 	 */
 	public function index()
 	{
-		$skills = Auth::User()->cvs->skills;
+		$skills = Auth::User()->cvs[0]->skills;
 
 		return View::make('skills.index', compact('skills'));
 	}

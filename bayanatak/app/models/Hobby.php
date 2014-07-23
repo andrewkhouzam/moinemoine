@@ -6,4 +6,9 @@ class Hobby extends Eloquent {
 	public static $rules = array(
 		'name' => array('required','alpha')
 	);
+
+		 public function cv()
+    {
+        return $this->belongsTo('Cv');
+    }
 }

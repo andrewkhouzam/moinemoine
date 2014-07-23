@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 Route::get('/Users/activate/{code}', array('as'=>'activate', function($code)
 {
 
@@ -95,6 +85,5 @@ Route::resource('workshops', 'WorkshopsController');
 Route::resource('languages', 'LanguagesController');
 
 Route::resource('educations', 'EducationsController');
-
 
 Route::resource('hobbies', 'HobbiesController');

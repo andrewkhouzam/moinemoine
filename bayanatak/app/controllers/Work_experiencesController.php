@@ -21,7 +21,10 @@ class Work_experiencesController extends BaseController {
 	 */
 	public function index()
 	{
-		$work_experiences = Auth::User()->cv->Work_experiences;
+
+			
+		$work_experiences = Auth::User()->cvs[0]->workexperiences;
+		
 
 		return View::make('work_experiences.index', compact('work_experiences'));
 	}
