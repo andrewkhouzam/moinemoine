@@ -21,7 +21,7 @@ class HobbiesController extends BaseController {
 	 */
 	public function index()
 	{
-		$hobbies = $this->hobby->all();
+		$hobbies =  Auth::User()->cv->hobbies;
 
 		return View::make('hobbies.index', compact('hobbies'));
 	}

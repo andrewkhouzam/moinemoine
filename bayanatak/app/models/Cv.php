@@ -4,6 +4,18 @@ class Cv extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array(
+<<<<<<< HEAD
+		// 'first_name' => array ('required','alpha'),
+		// 'surname' =>  array ('required','alpha'),
+		// 'date_of_birth' => 'required',
+		// 'nationality' => 'required',
+		// 'address' => 'required',
+		// 'e_mail' => array ('required','email'),
+		// 'phone_number' => array('required','integer'),
+		// 'mobile_number' =>  array('required','integer'),
+		// 'web' => array('required','url'),
+		// 'photo' => 'required'
+=======
 		'first_name' => array ('required','alpha'),
 		'surname' =>  array ('required','alpha'),
 		'date_of_birth' => 'required',
@@ -15,6 +27,7 @@ class Cv extends Eloquent {
 		'web' => array('url'),
         'photo' => 'required'
 		
+>>>>>>> 8dce1b2a611e4c491e699445fd6939d717aa263a
 	);
 
 		 public function user()

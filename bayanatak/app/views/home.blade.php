@@ -3,7 +3,7 @@ SUCCESS!
 	{{$user->email}}
 	
 	<p><?php echo link_to_route('cvs.create', 'Add New Cv', null, array('class' => 'btn btn-lg btn-success')); ?></p>
-	@if(count($user->cv)>0)
+	@if(count($user->cvs)>0)
     <p>{{ link_to_route('workshops.create', 'Add New Workshop', null, array('class' => 'btn btn-lg btn-success')) }}</p>
     <p>{{ link_to_route('work_experiences.create', 'Add New Work_experience', null, array('class' => 'btn btn-lg btn-success')) }}</p>
     <p>{{ link_to_route('skills.create', 'Add New Skill', null, array('class' => 'btn btn-lg btn-success')) }}</p>

@@ -21,7 +21,7 @@ class ObjectivesController extends BaseController {
 	 */
 	public function index()
 	{
-		$objectives = $this->objective->all();
+		$objectives = Auth::User()->cv->objectives;
 
 		return View::make('objectives.index', compact('objectives'));
 	}
