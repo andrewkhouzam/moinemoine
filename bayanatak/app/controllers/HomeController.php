@@ -61,7 +61,7 @@ class HomeController extends BaseController {
 				// redirect them to the secure section or whatever
 				// return Redirect::to('secure');
 				// for now we'll just echo success (even though echoing in a controller is bad)
-				return View::make('home')->withUser(Auth::User());
+				return Redirect::to('home')->withUser(Auth::User());
 			} else {	 	
 
 				// validation not successful, send back to form	

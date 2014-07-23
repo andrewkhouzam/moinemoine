@@ -56,7 +56,7 @@ class ObjectivesController extends BaseController {
 
 		
 
-				return View::make('home')->withUser(Auth::User());
+				return Redirect::to('home')->withUser(Auth::User());
 		}
 
 		return Redirect::route('objectives.create')
