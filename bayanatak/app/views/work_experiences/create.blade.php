@@ -16,6 +16,19 @@
     </div>
 </div>
 
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+  </script>
+</head>
+
 {{ Form::open(array('route' => 'work_experiences.store', 'class' => 'form-horizontal')) }}
 
         <div class="form-group">
@@ -28,21 +41,23 @@
         <div class="form-group">
             {{ Form::label('job_title', 'Job Title:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'job_title', Input::old('job_title'), array('class'=>'form-control','placeholder'=>'Company Name')) }}
+              {{ Form::text( 'job_title', Input::old('job_title'), array('class'=>'form-control','placeholder'=>'Company Name')) }}
             </div>
         </div>
 
         <div class="form-group">
             {{ Form::label('start_date', 'Start Date:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('start_date', Input::old('start_date'), array('class'=>'form-control', 'placeholder'=>'Start_date')) }}
+              {{ Form::text('start_date', Input::old('start_date'), array('class'=>'form-control datepicker', 'placeholder'=>'Start Date', 'autocomplete' => 'off')
+              ) }}
             </div>
         </div>
 
         <div class="form-group">
             {{ Form::label('end_date', 'End Date:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('end_date', Input::old('end_date'), array('class'=>'form-control', 'placeholder'=>'End_date')) }}
+              {{ Form::text('end_date', Input::old('end_date'), array('class'=>'form-control datepicker', 'placeholder'=>'Start Date', 'autocomplete' => 'off')
+              ) }}
             </div>
         </div>
 

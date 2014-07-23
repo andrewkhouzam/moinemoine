@@ -28,7 +28,7 @@ public function store(){
 	$User->active='0';
 $User->save();
 	Mail::send('emails.auth.tosend',array('link'=> URL::route('activate', $User->code),'username'=>$User->username),function($message)use($User){
-		$message->to($User->email,$User->username)->subject("sha3'l el account");
+		$message->to($User->email,$User->username)->subject("Activate Account");
 	});
 	
     

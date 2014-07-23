@@ -60,8 +60,7 @@ class EducationsController extends BaseController {
 
 		return Redirect::route('educations.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -116,8 +115,7 @@ class EducationsController extends BaseController {
 
 		return Redirect::route('educations.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

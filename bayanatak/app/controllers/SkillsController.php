@@ -22,7 +22,10 @@ class SkillsController extends BaseController {
 	public function index()
 	{
 		$skills = Auth::User()->cv->skills;
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8dce1b2a611e4c491e699445fd6939d717aa263a
 		return View::make('skills.index', compact('skills'));
 	}
 
@@ -60,8 +63,7 @@ class SkillsController extends BaseController {
 
 		return Redirect::route('skills.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -116,8 +118,7 @@ class SkillsController extends BaseController {
 
 		return Redirect::route('skills.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

@@ -59,8 +59,7 @@ class LanguagesController extends BaseController {
 
 		return Redirect::route('languages.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -115,8 +114,7 @@ class LanguagesController extends BaseController {
 
 		return Redirect::route('languages.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

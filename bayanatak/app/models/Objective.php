@@ -4,7 +4,7 @@ class Objective extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array(
-		'objective' => 'required'
+		'objective' => array('required','alpha')
 	);
 		 public function cv()
     {

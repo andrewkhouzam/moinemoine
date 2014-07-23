@@ -60,8 +60,7 @@ class Work_experiencesController extends BaseController {
 
 		return Redirect::route('work_experiences.create')
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**
@@ -116,8 +115,7 @@ class Work_experiencesController extends BaseController {
 
 		return Redirect::route('work_experiences.edit', $id)
 			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+			->withErrors($validation);
 	}
 
 	/**

@@ -2,6 +2,19 @@
 
 @section('main')
 
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+  </script>
+</head>
+
 <div class="row">
     <div class="col-md-10 col-md-offset-2">
         <h1>Edit Award</h1>
@@ -28,7 +41,7 @@
         <div class="form-group">
             {{ Form::label('date', 'Date:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::text('date', Input::old('date'), array('class'=>'form-control', 'placeholder'=>'Date')) }}
+              {{ Form::text('date', Input::old('date'), array('class'=>'form-control datepicker', 'placeholder'=>'Date', 'autocomplete'=> 'off')) }}
             </div>
         </div>
 
