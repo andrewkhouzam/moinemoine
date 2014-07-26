@@ -1,0 +1,272 @@
+/*****************************************************************************************/
+/*********************************CUSTOM**Fonts******************************************************/
+/*****************************************************************************************/
+
+@font-face {
+    font-family: 'Bold'; /*a name to be used later*/
+    src: url('../fonts/Bold.ttf') format('truetype'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Light'; /*a name to be used later*/
+    src: url('../fonts/Light.ttf') format('truetype'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Regular'; /*a name to be used later*/
+    src: url('../fonts/Regular.ttf') format('truetype'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'SemiBold'; /*a name to be used later*/
+    src: url('../fonts/SemiBold.ttf') format('truetype'); /*URL to font*/
+}
+
+
+
+
+/*****************************NAVIGATION BAR*********************************************/
+
+
+.navbar.navbar-fixed-top {
+	padding-bottom: 30px;
+	border-top: 10px solid #ED3744;
+}
+
+
+.image
+{	
+	padding-left:150px;
+	width:300px;
+}
+
+.arabicButton
+{	background: #F3F3F3;
+	height:50px;
+
+	
+}
+
+.top-bar
+{
+
+	background: #F3F3F3;
+	
+}
+.top-bar-section
+{
+	padding-top: 15px;
+	padding-right:200px; 
+}
+
+.navbar.navbar-fixed-top
+{
+background: #F3F3F3;
+}
+
+
+.top-bar-section li:not(.has-form) a:not(.button),.top-bar-section li:not(.has-form) a:not(.button):hover {
+	background: #F3F3F3; 
+}
+.topButton
+{
+	color: #3B5065;
+	font-family: 'Regular';
+	font-size: 15px;
+	padding: 0px 20px 0px 20px;
+}
+
+.borderTopRight
+{	left:40px;
+
+	border-right: 2px solid #3B5065;
+
+}
+.up
+{
+	right:500px;
+}
+.changeLanguage
+{	
+	padding-top:7px !important;
+	width:200px;
+	font-family: 'Regular';
+	color: #3B5065 !important;
+	font-size: 11px;
+	line-height: 15px !important;
+
+}
+
+
+/**************************************************************************************************************************/
+/*********************************************First Section in HomePage****************************************************/
+/**************************************************************************************************************************/
+.first, .third
+{
+	background-color: #F3F3F3; 
+}
+
+.firstArabic
+{	
+	padding-top: 20px;
+	text-align: center;
+	color:#2D3E50; 
+	font-size:40px;
+	font-family: 'Bold';
+}
+
+.firstArabic .second
+{
+	padding-top:-20px;
+}
+
+.secondArabic
+{	position: relative;
+	top:-20px;
+	padding-top: -10px;
+	text-align: center;
+	color:#2D3E50; 
+	font-size:30px;
+	font-family: 'Regular';
+}
+
+.illustrations
+{
+	position: relative;
+	text-align: center;
+
+}
+
+.illustrations img
+{
+	width: 250px;
+
+
+}
+
+.illustrations h4
+{	
+	padding-bottom: 10px;
+	color:#3F6C8A;
+	font-family: 'Bold';
+	font-weight: bold;
+	font-size: 20px;
+	border-bottom: 3px solid #ED3744;
+	width: 120px;
+	margin:0 auto;
+	line-height: 20px;
+}
+.illustrations p
+{
+	color: #3D6B89;
+	padding-top: 20px;
+	position: relative;
+	left:70px;
+	width:180px;
+}
+
+
+.circle
+{
+	height:40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #ED3744;
+	position: absolute;
+	top:20px;
+	left:45px;
+	text-align: center;
+	line-height: 40px;
+	color:white;
+	font-weight: bold;
+	font-family: 'Bold';
+	font-size: 20px;
+}
+/**************************************************************************************************************************/
+/*********************************************Second Section in HomePage****************************************************/
+/**************************************************************************************************************************/
+
+.second{
+	background-color: #2E4356;
+	height:500px;
+}
+.signUpContainer
+{
+	margin: 0 auto;
+	text-align: center;
+	max-width: 600px;
+}
+
+.second img
+{
+	height:250px;
+	position: absolute;
+	top:550px;
+	left:400px;
+}
+
+.signUpFirst
+{	
+	font-size: 40px;
+	font-family: 'Bold';
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+}
+.signUpSecond
+{	position: relative;
+	top:-35px;
+	font-size: 35px;
+	font-family: 'Regular';
+	color: white;
+	text-align: center;
+	margin-bottom: 0;
+}
+.signUpThird
+{
+	font-size: 20px;
+	font-family: 'Light';
+	color: white;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.signUpButton a
+{
+	color: white;
+	background-color: #1F2D3A;
+	padding: 10px;
+	display: inline-block;
+	width: 180px;
+	font-size:14px;
+	border-radius: 5px;
+}
+
+.signUpButton span{
+	font-weight: bold;
+}
+
+
+.signUpForms
+{
+	position: relative;
+	top:20px;
+}
+
+.signUpForms input
+{
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.createMyResume
+{
+	width: 600px;
+	height:37px;
+	background-color: #ED3744;
+	color:white;
+}
+
+/**************************************************************************************************************************/
+/*********************************************Contact**Us**Section************************************************/
+/**************************************************************************************************************************/
