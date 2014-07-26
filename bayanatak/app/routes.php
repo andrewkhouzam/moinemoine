@@ -25,6 +25,10 @@ Route::get('/Users/reset/{code}', array('as'=>'resetpassword',function($code)
 	return View::make('Users/newpassword',['userid'=>$User->id]);
 }));
 
+    Route::get('loginlinkedin', array('uses' => 'HomeController@loginWithLinkedin')); 
+	Route::get('logingoogle', array('uses' => 'HomeController@loginWithGoogle'));
+	Route::get('loginfacebook', array('uses' => 'HomeController@loginWithFacebook'));
+
 
 Route::get('/Users/forgetpassword', function()
 {
