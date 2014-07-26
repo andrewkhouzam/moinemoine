@@ -34,10 +34,11 @@
 </div>
 	{{ Form::close() }}
 
-
+        <li> {{link_to("/loginfacebook"," facebook !")}} </li>
+		<li> {{link_to("/logingoogle"," google !")}} </li>
+        <li> {{link_to("/loginlinkedin"," linkedin !")}} </li>
 		<li> {{link_to("/Users/forgetpassword","forget password !")}} </li>
 		<li> {{link_to("new","new user")}} </li>
-
 
 </body>
 </html>

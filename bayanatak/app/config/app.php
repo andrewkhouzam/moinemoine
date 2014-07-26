@@ -124,7 +124,7 @@ return array(
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Dollar\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider' ,
-
+		'Artdarek\OAuth\OAuthServiceProvider',
 
 
 
@@ -197,6 +197,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 				'PDF' => 'Barryvdh\DomPDF\Facade',
 				'Image' => 'Intervention\Image\Facades\Image',
+'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
 
 
 	),
