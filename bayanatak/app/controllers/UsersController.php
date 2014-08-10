@@ -5,11 +5,11 @@ class UsersController extends \BaseController {
 
 
 public function resetlink(){
-$User = User::where('username', '=',Input::get('username'))->where('email', '=',Input::get('email'))->first();
+$User = User::where('email', '=',Input::get('email'))->first();
 $User->code= str_random(60);
 $User->save();
-Mail::send('emails.auth.resettosend',array('link'=> URL::route('resetpassword', $User->code),'username'=>Input::get('username')),function($message){
-		$message->to(Input::get('email'),Input::get('username'))->subject("bayanatak password reset link");
+Mail::send('emails.auth.resettosend',array('link'=> URL::route('resetpassword', $User->code),'email'=>Input::get('email')),function($message){
+		$message->to(Input::get('email'),Input::get('email'))->subject("bayanatak password reset link");
 	});
 
 	return   'we sent the link to'.Input::get('email');
@@ -20,19 +20,17 @@ Mail::send('emails.auth.resettosend',array('link'=> URL::route('resetpassword', 
 
 public function store(){
 	$User = new User;
-	$User->name = Input::get('name');
-	$User->username=Input::get('username');
 	$User->email = Input::get('email');
 	$User->password = Hash::make(Input::get('password'));
 	$User->code= str_random(60);
 	$User->active='0';
 $User->save();
-	Mail::send('emails.auth.tosend',array('link'=> URL::route('activate', $User->code),'username'=>$User->username),function($message)use($User){
-		$message->to($User->email,$User->username)->subject("Activate Account");
+	Mail::send('emails.auth.tosend',array('link'=> URL::route('activate', $User->code),'email'=>$User->email),function($message)use($User){
+		$message->to($User->email,$User->email)->subject("Activate Account");
 	});
 	
     
-	return   View::make('Users/www');
+	return   View::make('Users/www')->withEmail(Input::get('email'));;
 }
 public function create(){
 	return  View::make('Users.create');

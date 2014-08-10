@@ -16,9 +16,9 @@ class CreateAwardsTable extends Migration {
 		Schema::create('awards', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('award');
-			$table->date('date');
-
-$table->string('cv_id');			$table->string('institute');
+			$table->string('date');
+			$table->string('cv_id');			
+			$table->string('institute');
 			$table->timestamps();
 		});
 	}

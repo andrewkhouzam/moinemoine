@@ -1,1 +1,1 @@
-ro7 shof el mail bta3k yala 
+We've sent an email to {{$email}}. Open it up to activate your account.

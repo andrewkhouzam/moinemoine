@@ -1,4 +1,11 @@
+@extends('layouts.main')
+
+@section('content')
+
+
+
 SUCCESS!
+
 	<!-- LOGOUT BUTTON -->
 	{{$user->email}}
 	
@@ -22,5 +29,8 @@ SUCCESS!
 	    	    <p>{{ link_to_route('htmlcvg', 'gen') }}</p>
 
 	    	    
+
+
+@stop
 
 

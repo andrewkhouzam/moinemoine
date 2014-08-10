@@ -1,5 +1,10 @@
 <?php
 
+
+Route::get('/', function()
+{
+	return View::make('/homepage');
+});
 Route::get('/Users/activate/{code}', array('as'=>'activate', function($code)
 {
 
@@ -25,9 +30,9 @@ Route::get('/Users/reset/{code}', array('as'=>'resetpassword',function($code)
 	return View::make('Users/newpassword',['userid'=>$User->id]);
 }));
 
-    Route::get('loginlinkedin', array('uses' => 'HomeController@loginWithLinkedin')); 
-	Route::get('logingoogle', array('uses' => 'HomeController@loginWithGoogle'));
-	Route::get('loginfacebook', array('uses' => 'HomeController@loginWithFacebook'));
+    Route::get('loginlinkedin', array('as'=>'loginlinkedin','uses' => 'HomeController@loginWithLinkedin')); 
+	Route::get('logingoogle', array('as'=>'logingoogle','uses' => 'HomeController@loginWithGoogle'));
+	Route::get('loginfacebook', array('as'=>'loginfacebook','uses' => 'HomeController@loginWithFacebook'));
 
 
 Route::get('/Users/forgetpassword', function()
@@ -45,10 +50,7 @@ Route::get('/Users/forgetpassword', function()
 	Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
 Route::resource('Users','UsersController');
-Route::get('/', function()
-{
-	return View::make('/login');
-});
+
 
 Route::get('/d', array('as'=>'htmlcvd',function()
 {

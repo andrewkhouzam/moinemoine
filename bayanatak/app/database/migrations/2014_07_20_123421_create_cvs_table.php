@@ -20,8 +20,8 @@ class CreateCvsTable extends Migration {
 			$table->string('nationality');
 			$table->string('address');
 			$table->string('e_mail');
-			$table->integer('phone_number');
-			$table->integer('mobile_number');
+			$table->string('phone_number');
+			$table->string('mobile_number');
 			$table->string('web');
 			$table->string('photo');
 			$table->string('user_id');

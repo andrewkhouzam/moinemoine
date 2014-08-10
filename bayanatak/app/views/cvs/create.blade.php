@@ -54,7 +54,7 @@
 
         <div class="form-group">
             <?php echo Form::label('date_of_birth', 'Date Of Birth:', array('class'=>'col-md-2 control-label')); ?>
-            <div class="col-sm-10">
+            <div class="col-sm-2">
               <?php echo Form::text('date_of_birth', Input::old('date_of_birth'), array('class'=>'form-control', 'placeholder'=>'Date of Birth','id'=>"datepicker", 'autocomplete' => 'off')); ?>
             </div>
         </div>
